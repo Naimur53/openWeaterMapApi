@@ -7,7 +7,13 @@ const iconWrap = document.getElementById('weather-status');
 
 const search = () => {
     const inputText = inputFiled.value;
-    loadData(inputText);
+    if (inputText == '') {
+        alert('please enter a city name');
+    }
+    else {
+
+        loadData(inputText);
+    }
 }
 //data
 const loadData = (text) => {

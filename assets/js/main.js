@@ -11,22 +11,18 @@ const search = () => {
         alert('please enter a city name');
     }
     else {
-
         loadData(inputText);
     }
 }
 //data
 const loadData = (text) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${text}&appid=42ce01b58ff8fe97ca604c9d4a87e5ed`;
-    console.log(url);
     fetch(url)
         .then(res => res.json())
         .then(data => calculateData(data));
 }
 //calculate data
 const calculateData = (data) => {
-    console.log(data);
-
     if (data.cod == '404') {
         alert(`we could not find any city with this name`);
     }
@@ -38,7 +34,7 @@ const calculateData = (data) => {
     }
 }
 // fahrenheit to c 
-const fToC = fahrenheit => (fahrenheit - 32) * (5 / 9);
+const fToC = kelvin => kelvin - 273.15;
 //data input 
 const dataInput = (name, tempera, weather, icon) => {
     cityName.innerText = name;

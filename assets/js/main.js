@@ -13,6 +13,7 @@ const search = () => {
     else {
         loadData(inputText);
     }
+    inputFiled.value = '';
 }
 //data
 const loadData = (text) => {
